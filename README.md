@@ -7,12 +7,12 @@
     git clone git@github.com:joaocosta/docker-rails-pg.git $RAILS_APP_NAME
     cd $RAILS_APP_NAME
     rm -fR .git
+    sed -i s/myapp/$RAILS_APP_NAME/g database.yml docker-compose.yml Dockerfile .env.*
 
 ## Initialize rails app
     docker-compose run web rails new . --force --database=postgresql --skip-bundle
 
 ## Configure database
-    sed -i s/myapp/$RAILS_APP_NAME/g .env.* database.yml docker-compose.yml
     mv database.yml config/database.yml
 
 ## Edit Gemfile and update any required gems
@@ -26,3 +26,6 @@
 
 ## Run application
     docker-compose up -d
+
+## Initialize new repo
+    git init .
