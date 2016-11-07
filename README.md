@@ -12,7 +12,7 @@
     docker-compose run web rails new . --force --database=postgresql --skip-bundle
 
 ## Configure database
-    sed -i.bak s/myapp/$RAILS_APP_NAME/g .env.* database.yml
+    sed -i s/myapp/$RAILS_APP_NAME/g .env.* database.yml docker-compose.yml
     mv database.yml config/database.yml
 
 ## Edit Gemfile and update any required gems
