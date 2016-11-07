@@ -12,14 +12,14 @@
 ## Initialize rails app
     docker-compose run web rails new . --force --database=postgresql --skip-bundle
 
-## Configure database
-    mv database.yml config/database.yml
-
 ## Edit Gemfile and update any required gems
     vi Gemfile
 
 ## Install the bundle in a reusable docker image
     docker-compose build
+
+## Configure database
+    mv database.yml config/database.yml
 
 ## Create database schema
     docker-compose run web rake db:create
