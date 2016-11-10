@@ -28,4 +28,7 @@
     docker-compose up -d
 
 ## Initialize new repo
+    echo $RAILS_APP_NAME >> .gitignore
     git init .
+    git add -A
+    git commit -m "Initial commit"
