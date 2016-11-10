@@ -17,4 +17,4 @@ services:
     env_file:
       - '.env.db'
     volumes:
-      - /root/myapp_db:/var/lib/postgresql/data
+      - ./myapp_db:/var/lib/postgresql/data
